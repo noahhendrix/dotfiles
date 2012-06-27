@@ -84,15 +84,3 @@ function set_bash_prompt () {
 
 # Tell bash to execute this function just before displaying its prompt.
 PROMPT_COMMAND=set_bash_prompt
-
-# Alias to run bundled sc-server
-ss() {
-  rm -rf tmp/
-  #use the corresponding port numbers for your services:
-  port=4020
-  [[ `pwd` =~ calendar ]] && port=4020
-  [[ `pwd` =~ contacts2 ]] && port=4023
-  bundle exec sc-server --port=$port -v
-}
-
-alias ss="ss"
