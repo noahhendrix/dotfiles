@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #rvm
-  CURRENT_USER=`whoami`
   [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # this makes tab-completion nicer, because it ignores
