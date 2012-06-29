@@ -2,7 +2,7 @@
 
 #rvm
   CURRENT_USER=`whoami`
-  [[ -s "/Users/${CURRENT_USER}/.rvm/scripts/rvm" ]] && source "/Users/${CURRENT_USER}/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+  [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # this makes tab-completion nicer, because it ignores
 # case, so `cd co[TAB]` will complete to `cd Code`
