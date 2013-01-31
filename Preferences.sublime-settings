@@ -1,28 +1,28 @@
 {
   // Startup
-  "create_window_at_startup": false,
+  "create_window_at_startup":           false,
 
   // Files
-  "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "tmp"],
+  "folder_exclude_patterns":            [".svn", ".git", ".hg", "CVS", "tmp"],
 
   // Window
-  "bold_folder_labels": true,
-  "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-  "theme": "Soda Light.sublime-theme",
-  "highlight_modified_tabs": true,
-  "highlight_line": true,
-  "show_full_path": true,
-  "rulers": [80],
+  "bold_folder_labels":                 true,
+  "color_scheme":                       "Packages/Color Scheme - Default/Monokai.tmTheme",
+  "theme":                              "Soda Light.sublime-theme",
+  "highlight_modified_tabs":            true,
+  "highlight_line":                     true,
+  "show_full_path":                     true,
+  "rulers":                             [80],
 
   // Text
-  "draw_white_space": "all",
-  "font_size": 17.0,
-  "line_padding_bottom": 0.5,
-  "line_padding_top": 0.5,
-  "word_wrap": false,
+  "draw_white_space":                   "all",
+  "font_size":                          17.0,
+  "line_padding_bottom":                0.5,
+  "line_padding_top":                   0.5,
+  "word_wrap":                          false,
 
   // Editing Behavior
-  "tab_size": 2,
-  "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": true
+  "tab_size":                           2,
+  "translate_tabs_to_spaces":           true,
+  "trim_trailing_white_space_on_save":  true
 }
