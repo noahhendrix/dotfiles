@@ -7,12 +7,20 @@
 
   // Window
   "bold_folder_labels":                 true,
-  "color_scheme":                       "Packages/Color Scheme - Default/Monokai.tmTheme",
-  "theme":                              "Soda Light.sublime-theme",
   "highlight_modified_tabs":            true,
   "highlight_line":                     true,
   "show_full_path":                     true,
   "rulers":                             [80],
+
+  // Theme
+  "color_scheme":                       "Packages/Color Scheme - Default/Monokai.tmTheme",
+  "theme":                              "Phoenix Dark.sublime-theme",
+  "phoenix_color_blue":                 true,
+  "phoenix_solid_current_tab":          true,
+  "phoenix_dirty_bottom_bar":           true,
+  "phoenix_dirty_bottom_bar_red":       true,
+  "phoenix_sidebar_tree_large":         true,
+  "phoenix_color_expanded_folder":      true,
 
   // Text
   "draw_white_space":                   "all",
