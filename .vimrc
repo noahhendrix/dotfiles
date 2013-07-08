@@ -41,6 +41,9 @@ set nocompatible               " be iMproved
   " Close Vim even if NERDTree is open
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+  " Open NERDTree when VIM starts without a file
+  autocmd vimenter * if !argc() | NERDTree | endif
+
 " ================
 " Code stuff
 " ================
@@ -114,6 +117,7 @@ set nocompatible               " be iMproved
 " ================
   map <Leader>j !python -m json.tool<CR>
   map <C-n> :NERDTreeToggle<CR>
+  map <Leader>n :NERDTreeFocus<CR>
   nmap <Leader>v :vsp $MYVIMRC<CR>
 
   command! W w
