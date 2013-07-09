@@ -41,9 +41,6 @@ set nocompatible               " be iMproved
   " Close Vim even if NERDTree is open
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-  " Open NERDTree when VIM starts without a file
-  autocmd vimenter * if !argc() | NERDTree | endif
-
 " ================
 " Code stuff
 " ================
