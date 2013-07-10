@@ -1,4 +1,5 @@
 set nocompatible               " be iMproved
+let mapleader=","
 
 " ================
 " Vundle
