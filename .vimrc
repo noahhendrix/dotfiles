@@ -14,11 +14,15 @@ let mapleader=","
   Bundle 'tpope/vim-fugitive'
   Bundle 'Shutnik/jshint2.vim'
   Bundle 'kchmck/vim-coffee-script'
+  Bundle 'bling/vim-airline'
 
 " ================
 " Theming
 " ================
   colorscheme desert
+
+  let g:airline_powerline_fonts=1
+  set laststatus=2                  " Makes airline work w/o splitting
 
 " ================
 " File Handling
@@ -27,7 +31,7 @@ let mapleader=","
   set directory=~/.vimswap//
 
   set encoding=utf-8
-  set autoread          "Auto-reload files when changed on disk
+  set autoread                      " Auto-reload files when changed on disk
 
   function! RenameFile()
     let old_name = expand('%')
@@ -48,7 +52,7 @@ let mapleader=","
   syntax on
   filetype plugin indent on
 
-  set expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  set expandtab shiftwidth=4 tabstop=4 softtabstop=4
   set backspace=indent,eol,start
 
   " JSHint on save
@@ -97,7 +101,7 @@ let mapleader=","
   match TrailingSpace /\s\+$/
 
   " Remove trailing whitespace on save
-  autocmd BufWritePre * :%s/\s\+$//e
+  "autocmd BufWritePre * :%s/\s\+$//e
 
 " ================
 " Splits
