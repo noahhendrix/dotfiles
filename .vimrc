@@ -108,10 +108,6 @@ let mapleader=","
 " ================
   set splitbelow splitright
 
-  function! IncreaseSplitWidth()
-    :vertical resize +10
-  endfunction
-
 " ================
 " Searching
 " ================
@@ -124,7 +120,6 @@ let mapleader=","
   map <Leader>j !python -m json.tool<CR>
   map <C-n> :NERDTreeToggle<CR>
   map <Leader>n :NERDTreeFocus<CR>
-  map <Leader>+ :call IncreaseSplitWidth()<CR>
   nmap <Leader>v :vsp $MYVIMRC<CR>
 
   command! W w
