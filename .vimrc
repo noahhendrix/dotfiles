@@ -15,6 +15,7 @@ let mapleader=","
   Bundle 'Shutnik/jshint2.vim'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'bling/vim-airline'
+  Bundle 'godlygeek/tabular'
 
 " ================
 " Theming
