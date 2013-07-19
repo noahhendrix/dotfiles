@@ -57,7 +57,7 @@ let mapleader=","
   set backspace=indent,eol,start
 
   " JSHint on save
-  autocmd! BufWritePost * if &filetype == "javascript" | silent JSHint | endif
+  autocmd BufWritePost *.js JSHint
 
 " ================
 " Test stuff
