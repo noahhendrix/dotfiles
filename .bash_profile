@@ -39,6 +39,10 @@
 # ================
 # Shortcuts
 # ================
+    # Color-ify `ls`
+    export LSCOLORS="cxfxcxdxbxegedabagacad"
+    alias ls="ls -G"
+
     function is_git_repository {
       git branch > /dev/null 2>&1
     }
@@ -47,8 +51,6 @@
       svn info > /dev/null 2>&1
     }
 
-
-    # Determine the branch/state information for this git repository.
     function set_git_branch {
       # Capture the output of the "git status" command.
       git_status="$(git status 2> /dev/null)"
