@@ -16,6 +16,7 @@ let mapleader=","
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'bling/vim-airline'
   Bundle 'godlygeek/tabular'
+  Bundle 'christoomey/vim-tmux-navigator'
 
 " ================
 " Theming
@@ -122,5 +123,11 @@ let mapleader=","
   map <C-n> :NERDTreeToggle<CR>
   map <Leader>n :NERDTreeFocus<CR>
   nmap <Leader>v :vsp $MYVIMRC<CR>
+
+  " Easier split navigation
+  nnoremap <C-J> <C-W><C-J>
+  nnoremap <C-K> <C-W><C-K>
+  nnoremap <C-L> <C-W><C-L>
+  nnoremap <C-H> <C-W><C-H>
 
   command! W w
