@@ -19,8 +19,7 @@
 # ================
 # Behavior
 # ================
-    PATH=/usr/local/bin:/usr/local/sbin:$PATH
-    export PATH=$PATH
+    export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
     # RVM
     [[ -s "/Users/${CURRENT_USER}/.rvm/scripts/rvm" ]] && source "/Users/${CURRENT_USER}/.rvm/scripts/rvm"
