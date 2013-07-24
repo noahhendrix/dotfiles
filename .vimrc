@@ -17,6 +17,7 @@ let mapleader=","
   Bundle 'bling/vim-airline'
   Bundle 'godlygeek/tabular'
   Bundle 'christoomey/vim-tmux-navigator'
+  Bundle 'vim-scripts/mru.vim'
   Bundle 'ervandew/supertab'
 
 " ================
