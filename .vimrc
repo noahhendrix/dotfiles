@@ -17,6 +17,7 @@ let mapleader=","
   Bundle 'bling/vim-airline'
   Bundle 'godlygeek/tabular'
   Bundle 'christoomey/vim-tmux-navigator'
+  Bundle 'ervandew/supertab'
 
 " ================
 " Theming
@@ -116,12 +117,16 @@ let mapleader=","
   set ignorecase smartcase  " Case-insensitive searching (unless capital letter)
   set incsearch             " Incremental searching
 
+  " Tab-completion using longest common sub-string
+  set wildmenu wildmode=longest:full,list:full,list:longest wildchar=<TAB>
+
 " ================
 " Shortcuts
 " ================
   map <Leader>j !python -m json.tool<CR>
   map <C-n> :NERDTreeToggle<CR>
   map <Leader>n :NERDTreeFocus<CR>
+  map <Leader>s :w !sudo tee %<CR>
   nmap <Leader>v :vsp $MYVIMRC<CR>
 
   " Easier split navigation
