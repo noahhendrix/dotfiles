@@ -128,6 +128,7 @@ let mapleader=","
   map <Leader>j !python -m json.tool<CR>
   map <C-n> :NERDTreeToggle<CR>
   map <Leader>n :NERDTreeFocus<CR>
+  map <Leader>s :w !sudo tee %<CR>
   map <Leader>c :cclose<CR>
   map <Leader>m :MRU<CR>
   nmap <Leader>v :vsp $MYVIMRC<CR>
