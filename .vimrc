@@ -17,6 +17,8 @@ let mapleader=","
   Bundle 'bling/vim-airline'
   Bundle 'godlygeek/tabular'
   Bundle 'christoomey/vim-tmux-navigator'
+  Bundle 'vim-scripts/mru.vim'
+  Bundle 'ervandew/supertab'
 
 " ================
 " Theming
@@ -90,6 +92,7 @@ let mapleader=","
   function! SetTestFile()
     let g:bjo_test_file=@%
   endfunction
+
 " ================
 " Line Behavior
 " ================
@@ -115,6 +118,9 @@ let mapleader=","
 " ================
   set ignorecase smartcase  " Case-insensitive searching (unless capital letter)
   set incsearch             " Incremental searching
+
+  " Tab-completion using longest common sub-string
+  set wildmenu wildmode=longest:full,list:full,list:longest wildchar=<TAB>
 
 " ================
 " Shortcuts
