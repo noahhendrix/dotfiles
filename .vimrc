@@ -17,8 +17,6 @@ let mapleader=","
   Bundle 'bling/vim-airline'
   Bundle 'godlygeek/tabular'
   Bundle 'christoomey/vim-tmux-navigator'
-  Bundle 'vim-scripts/mru.vim'
-  Bundle 'ervandew/supertab'
 
 " ================
 " Theming
@@ -60,7 +58,7 @@ let mapleader=","
   set backspace=indent,eol,start
 
   " JSHint on save
-  autocmd BufWritePost *.js JSHint
+  autocmd! BufWritePost * if &filetype == "javascript" | silent JSHint | endif
 
 " ================
 " Test stuff
@@ -118,16 +116,14 @@ let mapleader=","
   set ignorecase smartcase  " Case-insensitive searching (unless capital letter)
   set incsearch             " Incremental searching
 
-  " Tab-completion using longest common sub-string
-  set wildmenu wildmode=longest:full,list:full,list:longest wildchar=<TAB>
-
 " ================
 " Shortcuts
 " ================
   map <Leader>j !python -m json.tool<CR>
   map <C-n> :NERDTreeToggle<CR>
   map <Leader>n :NERDTreeFocus<CR>
-  map <Leader>s :w !sudo tee %<CR>
+  map <Leader>c :cclose<CR>
+  map <Leader>m :MRU<CR>
   nmap <Leader>v :vsp $MYVIMRC<CR>
 
   " Easier split navigation
