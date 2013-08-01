@@ -1,0 +1,4 @@
+#!/bin/bash
+
+find $(dirname $0)/.* -maxdepth 0 -type f -exec ln -f -s {} \;
+
