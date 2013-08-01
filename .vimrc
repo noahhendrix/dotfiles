@@ -4,6 +4,9 @@ let mapleader=","
 " ================
 " Vundle
 " ================
+  " To Install
+  " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
   set rtp+=~/.vim/bundle/vundle/
   call vundle#rc()
 
@@ -31,8 +34,8 @@ let mapleader=","
 " ================
 " File Handling
 " ================
-  set backupdir=~/.vimbackup//
-  set directory=~/.vimswap//
+  set backupdir=~/.vim/backup/
+  set directory=~/.vim/swap/
 
   set encoding=utf-8
   set autoread                      " Auto-reload files when changed on disk
