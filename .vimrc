@@ -36,6 +36,8 @@ let mapleader=","
 " ================
   set backupdir=~/.vim/backup/
   set directory=~/.vim/swap/
+  set viminfo+=n~/.vim/viminfo
+  let g:ctrlp_cache_dir = '~/.vim/ctrlp'
 
   set encoding=utf-8
   set autoread                      " Auto-reload files when changed on disk
