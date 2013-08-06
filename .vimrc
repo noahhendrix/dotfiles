@@ -113,6 +113,9 @@ let mapleader=","
   " Remove trailing whitespace on save
   "autocmd BufWritePre * :%s/\s\+$//e
 
+  " Fix slow O inserts
+  :set timeout timeoutlen=1000 ttimeoutlen=100
+
 " ================
 " Splits
 " ================

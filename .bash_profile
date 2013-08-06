@@ -22,7 +22,7 @@
     export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
     # RVM
-    [[ -s "/Users/${CURRENT_USER}/.rvm/scripts/rvm" ]] && source "/Users/${CURRENT_USER}/.rvm/scripts/rvm"
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
     export EDITOR=vim
     set -o vi                       # Use VIM keybindings in bash
@@ -135,8 +135,6 @@
       # Set the bash prompt variable.
       PS1="${LIGHT_GRAY}\W ${BRANCH}${RVM_RUBY_VERSION}${PROMPT_SYMBOL}"
     }
-
-    alias ls="ls -Gal"
 
 # Tell bash to execute this function just before displaying its prompt.
 PROMPT_COMMAND=set_bash_prompt
