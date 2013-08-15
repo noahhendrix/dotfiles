@@ -22,6 +22,9 @@ let mapleader=","
   Bundle 'christoomey/vim-tmux-navigator'
   Bundle 'vim-scripts/mru.vim'
   Bundle 'ervandew/supertab'
+  Bundle 'scrooloose/nerdcommenter'
+  Bundle "javascript.vim--welshare"
+  Bundle "ZoomWin"
 
 " ================
 " Theming
@@ -130,6 +133,8 @@ let mapleader=","
   " Tab-completion using longest common sub-string
   set wildmenu wildmode=longest:full,list:full,list:longest wildchar=<TAB>
 
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " ================
 " Shortcuts
 " ================
@@ -137,7 +142,7 @@ let mapleader=","
   map <C-n> :NERDTreeToggle<CR>
   map <Leader>n :NERDTreeFocus<CR>
   map <Leader>s :w !sudo tee %<CR>
-  map <Leader>c :cclose<CR>
+  map <Leader>q :cclose<CR>
   map <Leader>m :MRU<CR>
   nmap <Leader>v :vsp $MYVIMRC<CR>
 
