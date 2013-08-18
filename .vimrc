@@ -14,15 +14,11 @@ let mapleader=","
   Bundle 'kien/ctrlp.vim'
   Bundle 'mileszs/ack.vim'
   Bundle 'scrooloose/nerdtree'
-  Bundle 'tpope/vim-fugitive'
   Bundle 'Shutnik/jshint2.vim'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'bling/vim-airline'
-  Bundle 'godlygeek/tabular'
   Bundle 'christoomey/vim-tmux-navigator'
   Bundle 'vim-scripts/mru.vim'
-  Bundle 'ervandew/supertab'
-  Bundle 'scrooloose/nerdcommenter'
   Bundle "javascript.vim--welshare"
   Bundle "ZoomWin"
 
@@ -45,6 +41,15 @@ let mapleader=","
   set encoding=utf-8
   set autoread                      " Auto-reload files when changed on disk
 
+  " More natural splitting
+  set splitbelow splitright
+
+  " Close Vim even if NERDTree is open
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+  " Open MRU files in new vertical split
+  let g:ctrlp_open_new_file = 'v'
+
   function! RenameFile()
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
@@ -54,9 +59,6 @@ let mapleader=","
         redraw!
     endif
   endfunction
-
-  " Close Vim even if NERDTree is open
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " ================
 " Code stuff
@@ -117,12 +119,7 @@ let mapleader=","
   "autocmd BufWritePre * :%s/\s\+$//e
 
   " Fix slow O inserts
-  :set timeout timeoutlen=1000 ttimeoutlen=100
-
-" ================
-" Splits
-" ================
-  set splitbelow splitright
+  set timeout timeoutlen=1000 ttimeoutlen=100
 
 " ================
 " Searching
@@ -134,6 +131,7 @@ let mapleader=","
   set wildmenu wildmode=longest:full,list:full,list:longest wildchar=<TAB>
 
   let g:ackprg = 'ag --nogroup --nocolor --column'
+  let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tmp)$'
 
 " ================
 " Shortcuts
@@ -141,9 +139,11 @@ let mapleader=","
   map <Leader>j !python -m json.tool<CR>
   map <C-n> :NERDTreeToggle<CR>
   map <Leader>n :NERDTreeFocus<CR>
+  map <Leader>r :NERDTreeFind<CR>
   map <Leader>s :w !sudo tee %<CR>
   map <Leader>q :cclose<CR>
   map <Leader>m :MRU<CR>
-  nmap <Leader>v :vsp $MYVIMRC<CR>
+  map <Leader><Leader> :ZoomWin<CR>
+  map <Leader>v :vsp $MYVIMRC<CR>
 
   command! W w
