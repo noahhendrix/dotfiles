@@ -14,13 +14,11 @@ let mapleader=","
   Bundle 'kien/ctrlp.vim'
   Bundle 'mileszs/ack.vim'
   Bundle 'scrooloose/nerdtree'
-  Bundle 'Shutnik/jshint2.vim'
-  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'scrooloose/syntastic'
   Bundle 'bling/vim-airline'
   Bundle 'christoomey/vim-tmux-navigator'
-  Bundle 'vim-scripts/mru.vim'
-  Bundle "javascript.vim--welshare"
-  Bundle "ZoomWin"
+  Bundle 'jelera/vim-javascript-syntax'
+  Bundle 'ZoomWin'
 
 " ================
 " Theming
@@ -47,9 +45,6 @@ let mapleader=","
   " Close Vim even if NERDTree is open
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-  " Open MRU files in new vertical split
-  let g:ctrlp_open_new_file = 'v'
-
   function! RenameFile()
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
@@ -66,42 +61,8 @@ let mapleader=","
   syntax on
   filetype plugin indent on
 
-  set expandtab shiftwidth=4 tabstop=4 softtabstop=4
+  set expandtab shiftwidth=2 tabstop=2 softtabstop=2
   set backspace=indent,eol,start
-
-  " JSHint on save
-  autocmd! BufWritePost * if &filetype == "javascript" | silent JSHint | endif
-
-" ================
-" Test stuff
-" ================
-  function! RunCurrentTest()
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-    if in_test_file
-      call SetTestFile()
-
-      if match(expand('%'), '\.feature$') != -1
-        call SetTestRunner("!bin/cucumber")
-        exec g:bjo_test_runner g:bjo_test_file
-      elseif match(expand('%'), '_spec\.rb$') != -1
-        call SetTestRunner("!bin/rspec")
-        exec g:bjo_test_runner g:bjo_test_file
-      else
-        call SetTestRunner("!ruby -Itest")
-        exec g:bjo_test_runner g:bjo_test_file
-      endif
-    else
-      exec g:bjo_test_runner g:bjo_test_file
-    endif
-  endfunction
-
-  function! SetTestRunner(runner)
-    let g:bjo_test_runner=a:runner
-  endfunction
-
-  function! SetTestFile()
-    let g:bjo_test_file=@%
-  endfunction
 
 " ================
 " Line Behavior
@@ -116,7 +77,7 @@ let mapleader=","
   match TrailingSpace /\s\+$/
 
   " Remove trailing whitespace on save
-  "autocmd BufWritePre * :%s/\s\+$//e
+  autocmd BufWritePre * :%s/\s\+$//e
 
   " Fix slow O inserts
   set timeout timeoutlen=1000 ttimeoutlen=100
@@ -136,14 +97,11 @@ let mapleader=","
 " ================
 " Shortcuts
 " ================
-  map <Leader>j !python -m json.tool<CR>
   map <C-n> :NERDTreeToggle<CR>
-  map <Leader>n :NERDTreeFocus<CR>
   map <Leader>r :NERDTreeFind<CR>
-  map <Leader>s :w !sudo tee %<CR>
   map <Leader>q :cclose<CR>
-  map <Leader>m :MRU<CR>
   map <Leader><Leader> :ZoomWin<CR>
   map <Leader>v :vsp $MYVIMRC<CR>
 
   command! W w
+
