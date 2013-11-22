@@ -44,8 +44,7 @@
 # Shortcuts
 # ================
     # Color-ify `ls`
-    export LSCOLORS="cxfxcxdxbxegedabagacad"
-    alias ls="ls -G"
+    alias ls="ls -al --color=auto"
 
     function is_git_repository {
       git branch > /dev/null 2>&1
