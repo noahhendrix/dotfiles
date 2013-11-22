@@ -21,8 +21,12 @@
 # ================
     export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
-    # RVM
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+    export RBENV_ROOT="${HOME}/.rbenv"
+
+    if [ -d "${RBENV_ROOT}" ]; then
+      export PATH="${RBENV_ROOT}/bin:${PATH}"
+      eval "$(rbenv init -)"
+    fi
 
     export EDITOR=vim
     set -o vi                       # Use VIM keybindings in bash
