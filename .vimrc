@@ -25,6 +25,12 @@ let mapleader=","
   colorscheme desert
 
   let g:airline_powerline_fonts=1
+  let g:airline_detect_modified=0
+  let g:airline_right_sep=''
+  let g:airline_section_x=''
+  let g:airline_section_y=''
+  let g:airline_section_z=''
+
   set laststatus=2                  " Makes airline work w/o splitting
 
 " ================
@@ -33,7 +39,6 @@ let mapleader=","
   set backupdir=~/.vim/backup/
   set directory=~/.vim/swap/
   set viminfo+=n~/.vim/viminfo
-  let g:ctrlp_cache_dir = '~/.vim/ctrlp'
 
   set encoding=utf-8
   set autoread                      " Auto-reload files when changed on disk
@@ -60,14 +65,14 @@ let mapleader=","
   syntax on
   filetype plugin indent on
 
-  set expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  set expandtab shiftwidth=4 tabstop=4 softtabstop=4
   set backspace=indent,eol,start
 
 " ================
 " Line Behavior
 " ================
   set nowrap
-  set number
+  set relativenumber
   set foldmethod=indent foldlevel=99
   set colorcolumn=81
 
@@ -114,4 +119,5 @@ let mapleader=","
   map <Leader>v :vsp $MYVIMRC<CR>
 
   command! W w
+  command! Q q
 
