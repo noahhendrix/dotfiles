@@ -12,12 +12,13 @@ let mapleader=","
 
   Bundle 'gmarik/vundle'
   Bundle 'kien/ctrlp.vim'
-  Bundle 'scrooloose/nerdtree'
   Bundle 'scrooloose/syntastic'
   Bundle 'bling/vim-airline'
   Bundle 'christoomey/vim-tmux-navigator'
   Bundle 'jelera/vim-javascript-syntax'
   Bundle 'ZoomWin'
+  Bundle 'dockyard/vim-easydir'
+  Bundle 'tpope/vim-vinegar'
 
 " ================
 " Theming
@@ -39,15 +40,10 @@ let mapleader=","
   set backupdir=~/.vim/backup/
   set directory=~/.vim/swap/
   set viminfo+=n~/.vim/viminfo
-
   set encoding=utf-8
   set autoread                      " Auto-reload files when changed on disk
-
-  " More natural splitting
-  set splitbelow splitright
-
-  " Close Vim even if NERDTree is open
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  set splitbelow splitright         " More natural splitting
+  let g:netrw_liststyle=3           " Use tree listing style
 
   function! RenameFile()
     let old_name = expand('%')
@@ -75,6 +71,7 @@ let mapleader=","
   set relativenumber
   set foldmethod=indent foldlevel=99
   set colorcolumn=81
+  set timeout timeoutlen=1000 ttimeoutlen=100       " Fix slow O inserts
 
   " Highlight trailing whitespace
   highlight TrailingSpace ctermbg=red ctermfg=white guibg=#592929
@@ -82,9 +79,6 @@ let mapleader=","
 
   " Remove trailing whitespace on save
   autocmd BufWritePre * :%s/\s\+$//e
-
-  " Fix slow O inserts
-  set timeout timeoutlen=1000 ttimeoutlen=100
 
 " ================
 " Searching
@@ -112,8 +106,6 @@ let mapleader=","
 " ================
 " Shortcuts
 " ================
-  map <C-n> :NERDTreeToggle<CR>
-  map <Leader>r :NERDTreeFind<CR>
   map <Leader>q :cclose<CR>
   map <Leader><Leader> :ZoomWin<CR>
   map <Leader>v :vsp $MYVIMRC<CR>
