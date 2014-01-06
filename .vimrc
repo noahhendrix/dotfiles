@@ -68,7 +68,7 @@ let mapleader=","
 " Line Behavior
 " ================
   set nowrap
-  set relativenumber
+  set relativenumber number
   set foldmethod=indent foldlevel=99
   set colorcolumn=81
   set timeout timeoutlen=1000 ttimeoutlen=100       " Fix slow O inserts
