@@ -1,0 +1,14 @@
+[user]
+	name = Noah Hendrix
+	email = noahhendrix@gmail.com
+[mergetool]
+	keepBackup = true
+[color]
+	ui = true
+[alias]
+	ctags = !.git/hooks/ctags
+[core]
+	excludesfile = /Users/noahhendrix/.gitignore_global
+	editor = vim
+[init]
+	templatedir = ~/Code/dotfiles/.git_template
