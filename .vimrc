@@ -14,7 +14,6 @@ let mapleader=","
   Bundle 'kien/ctrlp.vim'
   Bundle 'scrooloose/syntastic'
   Bundle 'bling/vim-airline'
-  Bundle 'christoomey/vim-tmux-navigator'
   Bundle 'jelera/vim-javascript-syntax'
   Bundle 'ZoomWin'
   Bundle 'dockyard/vim-easydir'
