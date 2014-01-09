@@ -8,7 +8,7 @@
 [alias]
 	ctags = !.git/hooks/ctags
 [core]
-	excludesfile = /Users/noahhendrix/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
 [init]
-	templatedir = ~/Code/dotfiles/.git_template
+	templatedir = ~/dotfiles/.git_template
