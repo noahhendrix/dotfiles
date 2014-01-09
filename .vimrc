@@ -60,7 +60,7 @@ let mapleader=","
   syntax on
   filetype plugin indent on
 
-  set expandtab shiftwidth=4 tabstop=4 softtabstop=4
+  set expandtab shiftwidth=2 tabstop=2 softtabstop=2
   set backspace=indent,eol,start
 
 " ================
