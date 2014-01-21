@@ -13,25 +13,15 @@ let mapleader=","
   Bundle 'gmarik/vundle'
   Bundle 'kien/ctrlp.vim'
   Bundle 'scrooloose/syntastic'
-  Bundle 'bling/vim-airline'
   Bundle 'jelera/vim-javascript-syntax'
-  Bundle 'ZoomWin'
   Bundle 'dockyard/vim-easydir'
   Bundle 'tpope/vim-vinegar'
+  Bundle 'mbbill/undotree'
 
 " ================
 " Theming
 " ================
   colorscheme desert
-
-  let g:airline_powerline_fonts=1
-  let g:airline_detect_modified=0
-  let g:airline_right_sep=''
-  let g:airline_section_x=''
-  let g:airline_section_y=''
-  let g:airline_section_z=''
-
-  set laststatus=2                  " Makes airline work w/o splitting
 
 " ================
 " File Handling
@@ -42,6 +32,8 @@ let mapleader=","
   set encoding=utf-8
   set autoread                      " Auto-reload files when changed on disk
   set splitbelow splitright         " More natural splitting
+  set statusline=%f%=%r             " FILENAME [RO]
+  set laststatus=2                  " Always show statusline
   let g:netrw_liststyle=3           " Use tree listing style
 
   function! RenameFile()
@@ -68,22 +60,17 @@ let mapleader=","
 " ================
   set nowrap
   set relativenumber number
-  set foldmethod=indent foldlevel=99
-  set colorcolumn=81
   set timeout timeoutlen=1000 ttimeoutlen=100       " Fix slow O inserts
+  set list listchars=tab:»·,trail:·                 " Show trailing whitespace as dots
 
-  " Highlight trailing whitespace
-  highlight TrailingSpace ctermbg=red ctermfg=white guibg=#592929
-  match TrailingSpace /\s\+$/
-
-  " Remove trailing whitespace on save
-  autocmd BufWritePre * :%s/\s\+$//e
+  autocmd BufWritePre * :%s/\s\+$//e                " Remove trailing whitespace on save
 
 " ================
 " Searching
 " ================
   set ignorecase smartcase  " Case-insensitive searching (unless capital letter)
   set incsearch             " Incremental searching
+  set hlsearch              " Highlight results
 
   " Tab-completion using longest common sub-string
   set wildmenu wildmode=longest:full,list:full,list:longest wildchar=<TAB>
@@ -106,7 +93,6 @@ let mapleader=","
 " Shortcuts
 " ================
   map <Leader>q :cclose<CR>
-  map <Leader><Leader> :ZoomWin<CR>
   map <Leader>v :vsp $MYVIMRC<CR>
 
   command! W w
