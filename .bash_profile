@@ -26,7 +26,7 @@ fi
 # ================
 # Behavior
 # ================
-    export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+    export PATH="./bin:/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
     export EDITOR=vim
     set -o vi                       # Use VIM keybindings in bash
