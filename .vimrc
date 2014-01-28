@@ -32,7 +32,7 @@ let mapleader=","
   set encoding=utf-8
   set autoread                      " Auto-reload files when changed on disk
   set splitbelow splitright         " More natural splitting
-  set statusline=%f%=%r             " FILENAME [RO]
+  set statusline=%f%m%=%r           " FILENAME [RO]
   set laststatus=2                  " Always show statusline
   let g:netrw_liststyle=3           " Use tree listing style
 
