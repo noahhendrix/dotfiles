@@ -43,9 +43,6 @@ fi
 # ================
 # Shortcuts
 # ================
-    # Color-ify `ls`
-    alias ls="ls -al --color=auto"
-
     function is_git_repository {
       git branch > /dev/null 2>&1
     }
