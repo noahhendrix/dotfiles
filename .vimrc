@@ -13,10 +13,11 @@ let mapleader=","
   Bundle 'gmarik/vundle'
   Bundle 'kien/ctrlp.vim'
   Bundle 'scrooloose/syntastic'
-  Bundle 'jelera/vim-javascript-syntax'
+  Bundle 'pangloss/vim-javascript'
   Bundle 'dockyard/vim-easydir'
   Bundle 'tpope/vim-vinegar'
   Bundle 'mbbill/undotree'
+  Bundle 'Lokaltog/vim-easymotion'
 
 " ================
 " Theming
@@ -34,7 +35,6 @@ let mapleader=","
   set splitbelow splitright         " More natural splitting
   set statusline=%f%m%=%r           " FILENAME [RO]
   set laststatus=2                  " Always show statusline
-  let g:netrw_liststyle=3           " Use tree listing style
 
   function! RenameFile()
     let old_name = expand('%')
