@@ -12,3 +12,5 @@
 	editor = vim
 [init]
 	templatedir = ~/dotfiles/.git_template
+[push]
+	default = current
