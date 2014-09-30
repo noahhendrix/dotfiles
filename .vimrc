@@ -18,6 +18,7 @@ let mapleader=","
   Bundle 'tpope/vim-vinegar'
   Bundle 'mbbill/undotree'
   Bundle 'Lokaltog/vim-easymotion'
+  Bundle 'tpope/vim-dispatch'
 
 " ================
 " Theming
