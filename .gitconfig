@@ -5,12 +5,8 @@
 	keepBackup = true
 [color]
 	ui = true
-[alias]
-	ctags = !.git/hooks/ctags
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
-[init]
-	templatedir = ~/dotfiles/.git_template
 [push]
 	default = current

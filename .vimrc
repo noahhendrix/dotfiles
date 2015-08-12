@@ -17,7 +17,6 @@ let mapleader=","
   Bundle 'dockyard/vim-easydir'
   Bundle 'tpope/vim-vinegar'
   Bundle 'mbbill/undotree'
-  Bundle 'Lokaltog/vim-easymotion'
   Bundle 'tpope/vim-dispatch'
 
 " ================

@@ -1,19 +1,8 @@
 #!/bin/bash
 
 # ================
-# Constants
-# ================
-    RED="\[\033[0;31m\]"
-    YELLOW="\[\033[0;33m\]"
-    GREEN="\[\033[0;32m\]"
-    LIGHT_GRAY="\[\033[0;37m\]"
-    COLOR_NONE="\[\e[0m\]"
-
-# ================
 # Behavior
 # ================
-    export PATH="./bin:~/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-
     # Use VIM and VIM keybindings in bash
     export EDITOR=vim
     set -o vi
@@ -23,7 +12,7 @@
 
     # Add autocompletion for other programs like git.
     # Requires `brew install bash-completion`
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    if [ -f $(which brew && brew --prefix)/etc/bash_completion ]; then
       . $(brew --prefix)/etc/bash_completion
     fi
 
@@ -38,6 +27,12 @@
 # ================
 # Prompt
 # ================
+    RED="\[\033[0;31m\]"
+    YELLOW="\[\033[0;33m\]"
+    GREEN="\[\033[0;32m\]"
+    LIGHT_GRAY="\[\033[0;37m\]"
+    COLOR_NONE="\[\e[0m\]"
+
     # Show the git branch name and use color for status (red=dirty, green=clean,
     # yellow=staged) IF you’re in a git repo.
     function set_bash_prompt () {
@@ -76,6 +71,4 @@
 
     # Tell bash to execute this function just before displaying its prompt.
     PROMPT_COMMAND=set_bash_prompt
-
-source ~/.bash_work
 
