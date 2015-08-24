@@ -76,6 +76,7 @@ let mapleader=","
   set wildmenu wildmode=longest:full,list:full,list:longest wildchar=<TAB>
 
   let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tmp)$'
+  let g:ctrlp_working_path_mode = ''
 
   " The Silver Searcher
   if executable('ag')
