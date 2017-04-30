@@ -9,6 +9,9 @@
 
     # Smart tab-completion
     bind 'set completion-ignore-case on'
+    
+    # Add home brew directory to path
+    export PATH="/usr/local/sbin:${PATH}"
 
     # Add autocompletion for other programs like git.
     # Requires `brew install bash-completion`
@@ -23,6 +26,11 @@
       export PATH="${RBENV_ROOT}/bin:${PATH}"
       eval "$(rbenv init -)"
     fi
+    
+    export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD ||
+        find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
+        sed s/^..//) 2> /dev/null'
+    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # ================
 # Prompt
@@ -48,7 +56,7 @@
       git_status="$(git status 2> /dev/null)"
       if [[ ${git_status} ]]; then
         # Set color based on clean/staged/dirty.
-        if [[ ${git_status} =~ "working directory clean" ]]; then
+        if [[ ${git_status} =~ "working tree clean" ]]; then
           color=$GREEN
         elif [[ ${git_status} =~ "Changes to be committed" ]]; then
           color=$YELLOW
@@ -71,4 +79,3 @@
 
     # Tell bash to execute this function just before displaying its prompt.
     PROMPT_COMMAND=set_bash_prompt
-
