@@ -56,7 +56,7 @@
       git_status="$(git status 2> /dev/null)"
       if [[ ${git_status} ]]; then
         # Set color based on clean/staged/dirty.
-        if [[ ${git_status} =~ "working tree clean" ]]; then
+        if [[ ${git_status} =~ "clean" ]]; then
           color=$GREEN
         elif [[ ${git_status} =~ "Changes to be committed" ]]; then
           color=$YELLOW

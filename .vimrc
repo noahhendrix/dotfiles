@@ -69,6 +69,9 @@ set nocompatible               " be iMproved
   " Syntax Checking
   let g:validator_javascript_checkers = ['npm run eslint']
 
+  " jBuilder syntax highlighting
+  au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+
 " ================
 " Line Behavior
 " ================
