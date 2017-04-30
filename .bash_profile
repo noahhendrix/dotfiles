@@ -9,7 +9,7 @@
 
     # Smart tab-completion
     bind 'set completion-ignore-case on'
-    
+
     # Add home brew directory to path
     export PATH="/usr/local/sbin:${PATH}"
 
@@ -26,7 +26,7 @@
       export PATH="${RBENV_ROOT}/bin:${PATH}"
       eval "$(rbenv init -)"
     fi
-    
+
     export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD ||
         find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
         sed s/^..//) 2> /dev/null'
