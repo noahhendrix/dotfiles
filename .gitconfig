@@ -8,5 +8,8 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
+	precomposeunicode = true
 [push]
 	default = current
+[rerere]
+	enabled = true

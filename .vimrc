@@ -8,6 +8,7 @@ set nocompatible               " be iMproved
 
   call plug#begin('~/.vim/plugged')
 
+  Plug 'altercation/vim-colors-solarized'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'pangloss/vim-javascript'
@@ -25,7 +26,9 @@ set nocompatible               " be iMproved
 " ================
 " Theming
 " ================
-  colorscheme desert
+  syntax on
+  set background=dark
+  colorscheme solarized
 
 " ================
 " File Handling
@@ -52,7 +55,6 @@ set nocompatible               " be iMproved
 " ================
 " Code stuff
 " ================
-  syntax on
   filetype plugin indent on
 
   set expandtab shiftwidth=2 tabstop=2 softtabstop=2
