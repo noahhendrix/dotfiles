@@ -8,18 +8,26 @@ set nocompatible               " be iMproved
 
   call plug#begin('~/.vim/plugged')
 
+  " Editor Featuers
   Plug 'altercation/vim-colors-solarized'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'pangloss/vim-javascript'
-  Plug 'mxw/vim-jsx'
+  Plug 'mileszs/ack.vim'
   Plug 'dockyard/vim-easydir'
   Plug 'tpope/vim-vinegar'
   Plug 'mbbill/undotree'
   Plug 'tpope/vim-surround'
-  Plug 'Raimondi/delimitMate'
   Plug 'tpope/vim-repeat'
+
+  " Code Features
+  Plug 'Raimondi/delimitMate'
   Plug 'w0rp/ale'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'tpope/vim-endwise'
+
+  " Git Features
+  Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-rhubarb'
 
   call plug#end()
 
@@ -93,12 +101,6 @@ set nocompatible               " be iMproved
 
   " Tab-completion using longest common sub-string
   set wildmenu wildmode=longest:full,list:full,list:longest wildchar=<TAB>
-
-  " The Silver Searcher
-  if executable('ag')
-    " Use ag over grep
-    set grepprg=ag\ --nogroup\ --nocolor
-  endif
 
 " ================
 " Shortcuts
