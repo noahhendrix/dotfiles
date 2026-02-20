@@ -1,4 +1,7 @@
 set nocompatible               " be iMproved
+set hidden                     " switch buffers w/out saving
+set updatetime=250             " delay before idle event triggered
+set shortmess+=c               " reduce noisy completion messages
 
 " ================
 " Plugins
@@ -9,7 +12,7 @@ set nocompatible               " be iMproved
   call plug#begin('~/.vim/plugged')
 
   " Editor Featuers
-  Plug 'altercation/vim-colors-solarized'
+  Plug 'ghifarit53/tokyonight-vim'
   Plug 'junegunn/fzf.vim'
   Plug 'mileszs/ack.vim'
   Plug 'dockyard/vim-easydir'
@@ -20,8 +23,13 @@ set nocompatible               " be iMproved
 
   " Code Features
   Plug 'Raimondi/delimitMate'
-  Plug 'w0rp/ale'
-  Plug 'sheerun/vim-polyglot'
+  Plug 'dense-analysis/ale'
+  Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'hail2u/vim-css3-syntax'
+  Plug 'othree/html5.vim'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'tpope/vim-endwise'
 
   " Git Features
@@ -35,15 +43,19 @@ set nocompatible               " be iMproved
 " Theming
 " ================
   syntax on
+  set termguicolors
   set background=dark
-  colorscheme solarized
+  let g:tokyonight_style = 'night'
+  colorscheme tokyonight
 
 " ================
 " File Handling
 " ================
-  set backupdir=~/.vim/backup/
-  set directory=~/.vim/swap/
-  set viminfo+=n~/.vim/viminfo
+  if !has('nvim')
+    set backupdir=~/.vim/backup/
+    set directory=~/.vim/swap/
+    set viminfo+=n~/.vim/viminfo
+  endif
   set encoding=utf-8
   set autoread                      " Auto-reload files when changed on disk
   set splitbelow splitright         " More natural splitting
@@ -55,7 +67,7 @@ set nocompatible               " be iMproved
     let new_name = input('New file name: ', expand('%'), 'file')
     if new_name != '' && new_name != old_name
         exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
+        call delete(old_name)
         redraw!
     endif
   endfunction
@@ -72,12 +84,25 @@ set nocompatible               " be iMproved
   " http://stackoverflow.com/questions/16902317
   set regexpengine=1
 
-  " Color columns after 80
+  " Color columns after 100
   let &colorcolumn=join(range(101, 999), ",")
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
   " Syntax Checking
-  let g:validator_javascript_checkers = ['npm run eslint']
+  let g:ale_linters = {
+        \  'javascript': ['eslint'],
+        \  'typescript': ['eslint'],
+        \}
+
+  let g:ale_fixers = {
+        \  'javascript': ['eslint'],
+        \  'typescript': ['eslint'],
+        \  'css': ['prettier'],
+        \  'json': ['prettier'],
+        \  'markdown': ['prettier'],
+        \}
+
+  let g:ale_fix_on_save = 1
 
   " jBuilder syntax highlighting
   au BufNewFile,BufRead *.json.jbuilder set ft=ruby
@@ -87,6 +112,7 @@ set nocompatible               " be iMproved
 " ================
   set nowrap
   set relativenumber number
+  set signcolumn=yes                                " shows left gutter
   set timeout timeoutlen=1000 ttimeoutlen=100       " Fix slow O inserts
   set list listchars=tab:»·,trail:·                 " Show trailing whitespace
 
