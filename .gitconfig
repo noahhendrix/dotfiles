@@ -13,3 +13,5 @@
 	default = current
 [rerere]
 	enabled = true
+[include]
+	path = ~/.gitconfig.local
