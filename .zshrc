@@ -3,12 +3,8 @@
 # ================
 # Behavior
 # ================
-  # Use VIM as default editor with vi keybindings
+  # Use VIM as default editor
   export EDITOR=vim
-  bindkey -v
-
-  # Reduce key timeout for snappier mode switching
-  export KEYTIMEOUT=1
 
   # History
   setopt histignorealldups sharehistory
