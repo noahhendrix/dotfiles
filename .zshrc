@@ -36,7 +36,8 @@
   export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD ||
       find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
       sed s/^..//) 2> /dev/null'
-  [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+  [[ -f ~/.fzf.zsh ]] && command -v fzf &>/dev/null && source ~/.fzf.zsh
+  bindkey '^R' history-incremental-search-backward  # Don't let fzf override ctrl+r
 
 # ================
 # Prompt
